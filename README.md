@@ -2,7 +2,7 @@ How to Use:
 1. Clone Repo into the modules directory of your oxid shop. The keep the provided folder structure:
  ```
    cd <shopRoot>
-  git clone https://github.com/Tobias-Eye-Able/Eye_Able_Oxid_7.0.0.git source/dev-packages/EyeAble/EyeAbleAssist
+  git clone https://github.com/Tobias-Eye-Able/eye-able-oxid-module.git source/dev-packages/EyeAble/EyeAbleAssist --branch=b-6.5.x
 ```
 2. Install Module from local path:
      ```
