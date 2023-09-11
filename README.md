@@ -7,8 +7,8 @@ How to Use:
 2. Install Module from local path:
      ```
    cd <shopRoot>
-     composer config repositories.oxid-esales/eyeable path source/dev-packages/EyeAble/EyeAbleAssist
-     composer require oxid-esales/eyeable:*
+     composer config repositories.eyeable/eye-able-oxid path source/dev-packages/EyeAble/EyeAbleAssist
+     composer require eyeable/eye-able-oxid:*
      ```
 **Important** <br> 
 The module only works when a config file is provided. For getting a Config File you have to contact -> info@eye-able.com . If you do not have one, the Eye-Able Assist Module will not work.
