@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /*
  * Integration test example
  */
-final class ExampleTest extends TestCase
+final class StartControllerRenderTest extends TestCase
 {
     public function testRender(): void
     {
