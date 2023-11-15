@@ -29,7 +29,6 @@ modules:
         cleanup: false # run populator before each test
         populator: >
           mysql --defaults-file=$mysql_config --default-character-set=utf8 $dbname < $dump
-          && mysql --defaults-file=$mysql_config --default-character-set=utf8 $dbname < $module_dump
     - \OxidEsales\Codeception\Module\Oxideshop:
         screen_shot_url: '%SCREEN_SHOT_URL%'
         depends:
@@ -44,11 +43,9 @@ modules:
           - Db
     - \OxidEsales\Codeception\Module\Translation\TranslationsModule:
         shop_path: '%SHOP_SOURCE_PATH%'
-        paths: "Application/views/flow/translations,Application/views/admin"
-          - Application/views/apex
-          - Application/views/admin_twig
-          - ../vendor/oxid-esales/eyeable/views/admin_twig
-          - ../vendor/oxid-esales/eyeable/translations
+        paths:
+          - 'Application/views/%TRANSLATION_DIRECTORY%'
+          - 'Application/views/%ADMIN_TRANSLATION_DIRECTORY%'
     - \OxidEsales\Codeception\Module\OxideshopModules
 step_decorators:
     - \Codeception\Step\Retry

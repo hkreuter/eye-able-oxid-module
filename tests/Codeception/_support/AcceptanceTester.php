@@ -49,41 +49,6 @@ final class AcceptanceTester extends \Codeception\Actor
         return $homePage;
     }
 
-    public function setGreetingModePersonal(): void
-    {
-        $I = $this;
-
-        $I->getServiceFromContainer(ModuleSettings::class)
-            ->saveGreetingMode(ModuleSettings::GREETING_MODE_PERSONAL);
-    }
-
-    public function setGreetingModeGeneric(): void
-    {
-        $I = $this;
-
-        $I->getServiceFromContainer(ModuleSettings::class)
-            ->saveGreetingMode(ModuleSettings::GREETING_MODE_GENERIC);
-    }
-
-    public function getDemoUserName(): string
-    {
-        return Fixtures::get('user')['email'];
-    }
-
-    public function getDemoUserPassword(): string
-    {
-        return Fixtures::get('user')['password'];
-    }
-
-    public function resetGreetingTracker(): void
-    {
-        $this->updateInDatabase(
-            'oemt_tracker',
-            ['oemtcount' => 0],
-            []
-        );
-    }
-
     public function getShopUrl(): string
     {
         $facts = new Facts();

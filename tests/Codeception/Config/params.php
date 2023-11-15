@@ -33,6 +33,8 @@ return [
     'PHP_BIN' => getenv('PHPBIN') ?: 'php',
     'SCREEN_SHOT_URL' => getenv('CC_SCREEN_SHOTS_PATH') ?: '',
     'THEME_ID' => getenv('THEME_ID') ?: 'apex',
+    'TRANSLATION_DIRECTORY' => getenv('TRANSLATION_DIRECTORY') ?: 'apex',
+    'ADMIN_TRANSLATION_DIRECTORY' => getenv('ADMIN_TRANSLATION_DIRECTORY') ?: 'admin_twig',
 ];
 
 function getTemporaryDataDumpFilePath(): string
