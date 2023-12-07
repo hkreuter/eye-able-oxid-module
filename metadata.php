@@ -25,7 +25,6 @@ $aModule = [
     'extend'      => [],
     'blocks'      => [
         [
-            //It is possible to replace blocks by theme, to do so add 'theme' => '<theme_name>' key/value in here
             'template' => 'layout/base.tpl',
             'block' => 'base_js',
             'file' => 'views/smarty/blocks/base.tpl'

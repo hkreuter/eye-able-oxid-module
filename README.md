@@ -1,21 +1,39 @@
-Install via composer: 
+# Eye-Able Assist Module
+
+**Important** <br>
+The module only works when a config file is provided. For getting a Config File you have to contact -> info@eye-able.com . If you do not have one, the Eye-Able Assist Module will not work.
+
+## Branch compatibility
+
+* b-6.5.x branch is compatible with OXID eShop compilation b-6.5.x
+* b-7.0.x branch is compatible with OXID eShop compilation b-7.0.x
+
+## Install via composer: 
  ```
    cd <shopRoot>
    composer require eyeable/eye-able-oxid
 ```
 
-Install manual: 
-1. Clone Repo into the modules directory of your oxid shop. The keep the provided folder structure:
+## Install for development purposes
+1. 
+2. Clone the repository into a suitable directory of your oxid shop, e.g. dev-packages.
  ```
-   cd <shopRoot>
-  git clone https://github.com/Tobias-Eye-Able/eye-able-oxid-modules.git source/dev-packages/EyeAble/EyeAbleAssist --branch=b-7.0.x
+  cd <shop installation path>
+  git clone https://github.com/Tobias-Eye-Able/eye-able-oxid-module.git dev-packages/EyeAbleAssist --branch=b-7.0.x
 ```
 2. Install Module from local path:
      ```
-   cd <shopRoot>
-     composer config repositories.eyeable/eye-able-oxid path source/dev-packages/EyeAble/EyeAbleAssist
-     composer require eyeable/eye-able-oxid:*
-     ```
-**Important** <br> 
-The module only works when a config file is provided. For getting a Config File you have to contact -> info@eye-able.com . If you do not have one, the Eye-Able Assist Module will not work.
-   
+   cd <shop installation path>
+   composer config repositories.eyeable/eye-able-oxid path dev-packages/EyeAbleAssist
+   composer require eyeable/eye-able-oxid:*
+   ```
+### Running integration tests
+
+ ```
+ vendor/bin/phpunit  --bootstrap=/var/www/source/bootstrap.php --testsuite=Integration  -c /var/www/vendor/eyeable/eye-able-oxid/tests/phpunit.xml 
+ ```
+
+### Running codeception tests
+```
+vendor/bin/codecept run --bootstrap=/var/www/source/bootstrap.php  -c /var/www/vendor/eyeable/eye-able-oxid/tests/codeception.yml
+```
