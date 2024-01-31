@@ -1,0 +1,22 @@
+name: Trigger
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  p74m57:
+    name: 'Php-7.4-Mysql-5.7'
+    uses: ./.github/workflows/development.yml
+    secrets: inherit
+    with:
+      php: '7.4'
+      mysql: '5.7.37'
+
+  p80m57:
+    name: 'Php-8.0-Mysql-5.7'
+    uses: ./.github/workflows/development.yml
+    secrets: inherit
+    with:
+      php: '8.0'
+      mysql: '5.7.37'
