@@ -1,6 +1,8 @@
 name: Shop tests with a module
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  workflow_call:
 
 env:
   PACKAGE_NAME: 'eyeable/eye-able-oxid'
@@ -145,3 +147,17 @@ jobs:
               -c tests/codeception.yml \
               --ext DotReporter \
               --skip-group flow_theme
+
+      - name: Upload log artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ShopCodeceptionTestsLog-${{ inputs.php }}-${{ inputs.mysql }}-${{ inputs.template_engine }}
+          path: |
+            docker-compose.yml
+            source/composer.json
+            source/composer.lock
+            source/source/config.inc.php
+            source/source/log/oxideshop.log
+            data/php/logs/error_log.txt
+            source/tests/Codeception/_output

@@ -249,7 +249,7 @@ jobs:
             source/source/config.inc.php
             source/source/log/oxideshop.log
             data/php/logs/error_log.txt
-            source/tests/Codeception/_output
+            vendor/{{ env.PACKAGE_NAME }}/tests/Codeception/_output
 
       - name: Stop containers
         if: always()
@@ -302,7 +302,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: sModuleCodeceptionTestsLog-${{ inputs.php }}-${{ inputs.mysql }}-${{ inputs.template_engine }}
+          name: ModuleCodeceptionTestsLog-${{ inputs.php }}-${{ inputs.mysql }}-${{ inputs.template_engine }}
           path: |
             docker-compose.yml
             source/composer.json
@@ -311,6 +311,7 @@ jobs:
             source/source/log/oxideshop.log
             data/php/logs/error_log.txt
             source/tests/Codeception/_output
+            vendor/{{ env.PACKAGE_NAME }}/tests/Codeception/_output
 
       - name: Stop containers
         if: always()
