@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\EyeAble\Tests\Codeception\Helper;
+namespace EyeAble\EyeAbleAssist\Tests\Codeception\Helper;
 
 use OxidEsales\Facts\Facts;
 

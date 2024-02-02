@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\EyeAble\Tests\Tests\Codeception;
+namespace EyeAble\EyeAbleAssist\Tests\Tests\Codeception;
 
 use Codeception\Util\Fixtures;
-use OxidEsales\EyeAble\Tests\Codeception\AcceptanceTester;
+use EyeAble\EyeAbleAssist\Tests\Codeception\AcceptanceTester;
 
 /**
  * @group eyeable_assist

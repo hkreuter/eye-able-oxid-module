@@ -35,8 +35,8 @@
     },
     "autoload": {
         "psr-4": {
-            "OxidEsales\\EyeAble\\": "src/",
-            "OxidEsales\\EyeAble\\Tests\\": "tests/"
+            "EyeAble\\EyeAbleAssist\\": "src/",
+            "EyeAble\\EyeAbleAssist\\Tests\\": "tests/"
         }
     },
     "config": {
