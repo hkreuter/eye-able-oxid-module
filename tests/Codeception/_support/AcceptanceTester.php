@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\EyeAble\Tests\Codeception;
+namespace EyeAble\EyeAbleAssist\Tests\Codeception;
 
 use Codeception\Util\Fixtures;
 use OxidEsales\Codeception\Page\Home;
 use OxidEsales\Facts\Facts;
-use OxidEsales\EyeAble\Service\ModuleSettings;
+use EyeAble\EyeAbleAssist\Service\ModuleSettings;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
 
 /**
