@@ -128,7 +128,61 @@ jobs:
             source/composer.lock
             source/source/config.inc.php
 
-  codeception_tests:
+  codeception_tests_module:
+    needs: [ install_shop_with_module ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load current installation from cache
+        uses: actions/cache@v3
+        with:
+          fail-on-cache-miss: true
+          path: |
+            ./*
+          key: installation-${{ github.sha }}-${{ join(inputs.*, '-') }}-${{ github.run_number }}-${{ github.run_attempt }}
+          restore-keys: |
+            installation-${{ github.sha }}-${{ join(inputs.*, '-') }}-${{ github.run_number }}-${{ github.run_attempt }}
+            installation-${{ github.sha }}-${{ join(inputs.*, '-') }}-${{ github.run_number }}
+
+      - name: Start containers
+        run: |
+          make file=services/selenium-chrome.yml addservice
+          make up
+          sleep 2
+
+      - name: Run module and shop codeception tests
+        # NOTE: exclude group is from shop admin tests and ok to exclude
+        run: |
+          docker-compose exec -T \
+            -e PARTIAL_MODULE_PATHS=${{ env.MODULE_PATHS }} \
+            -e SELENIUM_SERVER_HOST=selenium \
+            -e BROWSER_NAME=chrome \
+            -e RUN_TESTS_FOR_SHOP=0 \
+            -e RUN_TESTS_FOR_MODULES=1 \
+            -e ACTIVATE_ALL_MODULES=1 \
+            -e TEST_SUITE=acceptance \
+            php vendor/bin/runtests-codeception
+
+      - name: Upload log artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ModulesCodeceptionTestsLog-${{ inputs.php }}-${{ inputs.mysql }}
+          path: |
+            docker-compose.yml
+            source/composer.json
+            source/composer.lock
+            source/source/config.inc.php
+            source/source/log/oxideshop.log
+            data/php/logs/error_log.txt
+            source/modules/{{env.MODULE_PATHS}}/tests/Codeception/_output
+
+      - name: Stop containers
+        if: always()
+        run: |
+          make down
+          sleep 2
+
+  codeception_tests_shop:
     needs: [ install_shop_with_module ]
     runs-on: ubuntu-latest
     steps:
@@ -157,10 +211,10 @@ jobs:
             -e SELENIUM_SERVER_HOST=selenium \
             -e BROWSER_NAME=chrome \
             -e RUN_TESTS_FOR_SHOP=1 \
-            -e RUN_TESTS_FOR_MODULES=1 \
+            -e RUN_TESTS_FOR_MODULES=0 \
             -e ACTIVATE_ALL_MODULES=1 \
             -e TEST_SUITE=acceptance \
-            php vendor/bin/runtests-codeception -x genericImport
+            php vendor/bin/runtests-codeception -x genericImport 
 
       - name: Upload log artifact
         if: always()
@@ -175,7 +229,6 @@ jobs:
             source/source/log/oxideshop.log
             data/php/logs/error_log.txt
             source/tests/Codeception/_output
-            source/modules/{{env.MODULE_PATHS}}/tests/Codeception/_output
 
       - name: Stop containers
         if: always()
