@@ -7,9 +7,10 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\EyeAble\Tests\Tests\Codeception;
+namespace EyeAble\EyeAbleAssist\Tests\Tests\Codeception;
 
-use OxidEsales\EyeAble\Tests\Codeception\AcceptanceTester;
+use Codeception\Util\Fixtures;
+use EyeAble\EyeAbleAssist\Tests\Codeception\AcceptanceTester;
 
 /**
  * @group eyeable_assist
@@ -31,14 +32,20 @@ final class FrontendCest
 
     public function testEyeAbleAssistIsVisibleOnContact(AcceptanceTester $I): void
     {
-        $I->wantToTest('that the eye able assist is visible on the contact page');
+        $I->wantToTest('that the eye able assist is visible on account page');
 
         $I->openShop()
-            ->openUserAccountPage()
+            ->loginUser(Fixtures::get('user')['email' ], Fixtures::get('user')['password'])
+            ->openAccountPage()
             ->seePageOpened();
 
         $source = $I->grabPageSource();
         $I->assertStringContainsString('eye-able', $source);
         $I->assertStringContainsString('eyeAbleWebsitePlugin', $source);
+    }
+
+    private function getExistingUserData()
+    {
+        return Fixtures::get('user');
     }
 }
