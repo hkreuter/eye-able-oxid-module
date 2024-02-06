@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\EyeAble\Tests\Codeception\Helper;
+namespace EyeAble\EyeAbleAssist\Tests\Codeception\Helper;
 
 use OxidEsales\Facts\Facts;
 
@@ -18,6 +18,6 @@ final class Acceptance extends \Codeception\Module
 {
     public function _beforeSuite($settings = []): void
     {
-        exec((new Facts())->getShopRootPath() . '/bin/oe-console oe:module:activate EyeAble_EyeAbleAssist');
+        exec((new Facts())->getShopRootPath() . '/bin/oe-console oe:module:activate eyeable_assist');
     }
 }

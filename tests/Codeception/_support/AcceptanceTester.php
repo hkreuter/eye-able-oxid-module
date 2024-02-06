@@ -7,12 +7,12 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\EyeAble\Tests\Codeception;
+namespace EyeAble\EyeAbleAssist\Tests\Codeception;
 
 use Codeception\Util\Fixtures;
 use OxidEsales\Codeception\Page\Home;
 use OxidEsales\Facts\Facts;
-use OxidEsales\EyeAble\Service\ModuleSettings;
+use EyeAble\EyeAbleAssist\Service\ModuleSettings;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
 
 /**
@@ -47,41 +47,6 @@ final class AcceptanceTester extends \Codeception\Actor
         $I->amOnPage($homePage->URL);
 
         return $homePage;
-    }
-
-    public function setGreetingModePersonal(): void
-    {
-        $I = $this;
-
-        $I->getServiceFromContainer(ModuleSettings::class)
-            ->saveGreetingMode(ModuleSettings::GREETING_MODE_PERSONAL);
-    }
-
-    public function setGreetingModeGeneric(): void
-    {
-        $I = $this;
-
-        $I->getServiceFromContainer(ModuleSettings::class)
-            ->saveGreetingMode(ModuleSettings::GREETING_MODE_GENERIC);
-    }
-
-    public function getDemoUserName(): string
-    {
-        return Fixtures::get('user')['email'];
-    }
-
-    public function getDemoUserPassword(): string
-    {
-        return Fixtures::get('user')['password'];
-    }
-
-    public function resetGreetingTracker(): void
-    {
-        $this->updateInDatabase(
-            'oemt_tracker',
-            ['oemtcount' => 0],
-            []
-        );
     }
 
     public function getShopUrl(): string

@@ -1,4 +1,4 @@
-namespace: OxidEsales\EyeAble\Tests\Codeception
+namespace: EyeAble\EyeAbleAssist\Tests\Codeception
 
 params:
   - Codeception/Config/params.php
