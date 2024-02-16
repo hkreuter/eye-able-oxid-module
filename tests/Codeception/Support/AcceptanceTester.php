@@ -7,14 +7,17 @@
 
 declare(strict_types=1);
 
-namespace EyeAble\EyeAbleAssist\Tests\Codeception;
+namespace EyeAble\EyeAbleAssist\Tests\Codeception\Support;
 
+use Codeception\Util\Fixtures;
 use OxidEsales\Codeception\Page\Home;
 use OxidEsales\Facts\Facts;
+use OxidEsales\EyeAble\Service\ModuleSettings;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
 
 /**
  * Inherited Methods
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -51,12 +54,5 @@ final class AcceptanceTester extends \Codeception\Actor
         $facts = new Facts();
 
         return $facts->getShopUrl();
-    }
-
-    protected function getServiceFromContainer(string $serviceName)
-    {
-        return ContainerFactory::getInstance()
-            ->getContainer()
-            ->get($serviceName);
     }
 }

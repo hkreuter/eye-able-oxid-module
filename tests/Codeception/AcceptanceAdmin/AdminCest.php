@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace EyeAble\EyeAbleAssist\Tests\Codeception;
 
-use EyeAble\EyeAbleAssist\Tests\Codeception\AcceptanceAdminTester;
+use EyeAble\EyeAbleAssist\Tests\Codeception\Support\AcceptanceAdminTester;
 use OxidEsales\Codeception\Module\Translation\Translator;
 
 /**

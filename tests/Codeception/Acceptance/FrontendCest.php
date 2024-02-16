@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace EyeAble\EyeAbleAssist\Tests\Codeception;
 
 use Codeception\Util\Fixtures;
-use EyeAble\EyeAbleAssist\Tests\Codeception\AcceptanceTester;
+use EyeAble\EyeAbleAssist\Tests\Codeception\Support\AcceptanceTester;
 
 /**
  * @group eyeable_assist
