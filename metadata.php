@@ -36,4 +36,19 @@ $aModule = [
         'onActivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onActivate',
         'onDeactivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onDeactivate'
     ],
+    'settings' => [
+        /** Main */
+        [
+            'group'       => 'eyeableassist_main',
+            'name'        => 'eyeableassist_apiurl',
+            'type'        => 'str',
+            'value'       => ''
+        ],
+        [
+            'group' => 'eyeableassist_main',
+            'name'  => 'eyeableassist_apikey',
+            'type'  => 'str',
+            'value' => ''
+        ],
+    ]
 ];
