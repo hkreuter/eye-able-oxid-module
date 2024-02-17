@@ -19,15 +19,10 @@ final class ReportServiceTest extends IntegrationTestCase
 {
     use TestHelperTrait;
 
-    public function setUp(): void
-    {
-        parent::setUp();
-
-        $this->prepareTestData();
-    }
-
     public function testGetLatestReportData(): void
     {
+        $this->prepareTestData();
+
         $provider = ContainerFactory::getInstance()
             ->getContainer()
             ->get(ReportServiceInterface::class);
@@ -37,5 +32,14 @@ final class ReportServiceTest extends IntegrationTestCase
 
          $this->assertSame(21, $report->getErrorCount());
          $this->assertSame('startpage', $report->getTestedPage());
+    }
+
+    public function testGetLatestReportDataNoReport(): void
+    {
+        $provider = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(ReportServiceInterface::class);
+
+        $this->assertNull($provider->getLatestReportData());
     }
 }

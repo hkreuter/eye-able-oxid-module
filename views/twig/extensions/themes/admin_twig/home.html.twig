@@ -15,5 +15,23 @@
         <p>{{ translate({ ident: "EYEABLE_PLEASE_WAIT_FOR_REPORT" }) }}
     {% endif %}
 
+    <script>
+        window.addEventListener(
+            'DOMContentLoaded',
+            function () {
+                let widgetUrl = '{{ oViewConf.getShopURL() }}' + '/admin/index.php?cl=eyeabletrigger&fnc=triggerEyeableReport';
+
+                const xhttp = new XMLHttpRequest();
+                xhttp.open('GET', widgetUrl, true);
+                xhttp.onload = () => {
+                    if (xhttp.readyState === xhttp.DONE && (xhttp.status === 0 || (xhttp.status >= 200 && xhttp.status < 400))) {
+                        console.log('triggered eye-able report');
+                    }
+                }
+                xhttp.send();
+            }
+        );
+    </script>
+
     {{ parent() }}
 {% endblock %}

@@ -32,6 +32,9 @@ $aModule = [
             'file' => 'views/smarty/blocks/base.tpl'
         ]
     ],
+    'controllers' => [
+        'eyeabletrigger' => \EyeAble\EyeAbleAssist\Shop\Controller\ReportController::class
+    ],
     'events' => [
         'onActivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onActivate',
         'onDeactivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onDeactivate'

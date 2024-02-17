@@ -12,7 +12,7 @@ namespace EyeAble\EyeAbleAssist\Report\Model;
 use OxidEsales\Eshop\Core\Model\BaseModel;
 use DateTime;
 
-final class Report extends BaseModel
+class Report extends BaseModel
 {
     protected $_sClassName = 'eyablereport';
 
