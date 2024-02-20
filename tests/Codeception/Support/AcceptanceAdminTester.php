@@ -1,13 +1,8 @@
 <?php
 
-/**
- * Copyright © Webinclusion GmbH. All rights reserved.
- * See LICENSE file for license details.
- */
-
 declare(strict_types=1);
 
-namespace EyeAble\EyeAbleAssist\Tests\Codeception;
+namespace EyeAble\EyeAbleAssist\Tests\Codeception\Support;
 
 use Codeception\Util\Fixtures;
 use OxidEsales\Codeception\Admin\AdminLoginPage;
@@ -15,8 +10,8 @@ use OxidEsales\Codeception\Admin\AdminPanel;
 
 /**
  * Inherited Methods
- * @method void wantToTest($text)
  * @method void wantTo($text)
+ * @method void wantToTest($text)
  * @method void execute($callable)
  * @method void expectTo($prediction)
  * @method void expect($prediction)
@@ -24,13 +19,17 @@ use OxidEsales\Codeception\Admin\AdminPanel;
  * @method void am($role)
  * @method void lookForwardTo($achieveValue)
  * @method void comment($description)
- * @method void pause()
+ * @method void pause($vars = [])
  *
  * @SuppressWarnings(PHPMD)
 */
-final class AcceptanceAdminTester extends \Codeception\Actor
+class AcceptanceAdminTester extends \Codeception\Actor
 {
     use _generated\AcceptanceAdminTesterActions;
+
+    /**
+     * Define custom actions here
+     */
 
     public function openAdmin(): AdminLoginPage
     {

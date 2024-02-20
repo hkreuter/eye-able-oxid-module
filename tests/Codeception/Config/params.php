@@ -39,12 +39,12 @@ return [
 
 function getTemporaryDataDumpFilePath(): string
 {
-    return Path::join(__DIR__, '..', '_data', 'generated', 'dump.sql');
+    return Path::join(__DIR__, '..', 'Support', 'Data', 'generated', 'dump.sql');
 }
 
 function getCodeceptionSpecificFixtureFilePath(): string
 {
-    return Path::join(__DIR__, '..', '_data', 'fixtures.sql');
+    return Path::join(__DIR__, '..','Support', 'Data', 'fixtures.sql');
 }
 
 function getMysqlConfigPath(): string
