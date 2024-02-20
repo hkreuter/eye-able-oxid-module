@@ -17,18 +17,14 @@ use EyeAble\EyeAbleAssist\Report\Model\ReportDataInterface;
 
 final class ReportService implements ReportServiceInterface
 {
-    private const REPORT_TIMEOUT_AFTER = 604800; //7 days
-
     public function __construct(
-        private ReportProviderInterface $reportProvider,
-        private CallerServiceInterface $caller
+        private ReportProviderInterface $reportProvider
     ) {
     }
 
     public function getLatestReportData(): ?ReportDataInterface
     {
         $model = $this->reportProvider->getLatestReport();
-        $this->checkNeedFetchNewReport($model);
         $reportData = null;
 
         if ($model->isLoaded() && $model->getIssuedAt()) {
@@ -41,16 +37,5 @@ final class ReportService implements ReportServiceInterface
         }
 
         return $reportData;
-    }
-
-    private function checkNeedFetchNewReport(Report $reportModel): void
-    {
-        if (
-            !$reportModel->isLoaded() ||
-            !$reportModel->getIssuedAt() ||
-            $reportModel->getIssuedAt()->getTimestamp() + self::REPORT_TIMEOUT_AFTER < microtime()
-        ) {
-            $this->caller->createReport();
-        }
     }
 }
