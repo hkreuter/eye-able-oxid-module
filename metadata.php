@@ -38,9 +38,9 @@ $aModule = [
     'events' => [
         'onActivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onActivate',
         'onDeactivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onDeactivate'
-    ],
+    ]/*,
     'settings' => [
-        /** Main */
+        /* Main 
         [
             'group'       => 'eyeableassist_main',
             'name'        => 'eyeableassist_apiurl',
@@ -53,5 +53,5 @@ $aModule = [
             'type'  => 'str',
             'value' => ''
         ],
-    ]
+    ]*/
 ];

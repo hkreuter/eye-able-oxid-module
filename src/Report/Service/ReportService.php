@@ -26,12 +26,12 @@ final class ReportService implements ReportServiceInterface
     {
         $model = $this->reportProvider->getLatestReport();
         $reportData = null;
-
+    
         if ($model->isLoaded() && $model->getIssuedAt()) {
             $raw = $model->getReport();
             $reportData = new ReportData(
-                isset($raw['page']) ? $raw['page'] : '',
-                isset($raw['errorcount']) ? (int) $raw['errorcount'] : -1,
+                isset($raw['crawlInfo']["start"]) ? $raw['crawlInfo']["start"] : '',
+                isset($raw['totalWarnings']) ? (int) $raw['totalWarnings'] : -1,
                 $model->getIssuedAt()->format('Y-m-d h:i:s')
             );
         }

@@ -26,7 +26,7 @@ class Report extends BaseModel
 
     public function getReport(): ?array
     {
-        return $this->getRawFieldData('report') ?
+        return $this->getRawFieldData('report') ?  
             json_decode($this->getRawFieldData('report'), true) : null;
     }
 

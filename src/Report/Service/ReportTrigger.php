@@ -27,7 +27,7 @@ class ReportTrigger
     public function triggerReport(): void
     {
         $reportModel = $this->reportProvider->getLatestReport();
-
+        
         if (
             !$reportModel->isLoaded() ||
             !$reportModel->getIssuedAt() ||

@@ -32,9 +32,9 @@ class CallerService implements CallerServiceInterface
         ) {
             throw Caller::byReport();
         }
-
+        
         $report = oxNew(Report::class);
-        $report->setReport($decoded);
+        $report->setReport($decoded['summary']);
         $report->setIssuedAt(new DateTime('now'));
         $report->save();
 

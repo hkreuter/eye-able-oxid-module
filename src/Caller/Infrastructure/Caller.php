@@ -15,7 +15,7 @@ use CurlHandle;
 
 class Caller implements CallerInterface
 {
-    private const CURL_TIMEOUT = '120';
+    private const CURL_TIMEOUT = '240';
 
     public function __construct(
         private ContextInterface $context,
@@ -32,12 +32,13 @@ class Caller implements CallerInterface
             ->getFacts()
             ->getShopUrl();
         $shopId = $this->context->getCurrentShopId();
-
+        
         if ($this->context->getFacts()->isEnterprise()) {
             $shopUrl .= '?shp=' . $shopId;
         }
 
-        $curlHandle = $this->initializeCurl($this->getUrl($shopUrl));
+        //$curlHandle = $this->initializeCurl($this->getUrl($shopUrl));
+        $curlHandle = $this->initializeCurl("http://audit-api.eye-able.com/auditStats?apiKey=VZNJG65cb2fce4q5&url=" .urlencode($shopUrl));
         $content = (string) curl_exec($curlHandle);
         $curlInfo = (array) curl_getinfo($curlHandle);
         $errorMessage = curl_error($curlHandle);
@@ -60,7 +61,7 @@ class Caller implements CallerInterface
     ): string
     {
         $apiUrl = $this->moduleSettings->getApiUrl();
-        $apiKey = $this->moduleSettings->getApiKey();
+        $apiKey = $this->moduleSettings->getApiKey();        
 
         return $apiUrl . '?apiKey=' . $apiKey . '&url=' . urlencode($shopUrl);
     }
