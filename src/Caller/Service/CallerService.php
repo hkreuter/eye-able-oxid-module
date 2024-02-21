@@ -27,12 +27,13 @@ class CallerService implements CallerServiceInterface
         $this->validateReport($page);
 
         $decoded = json_decode($page->getContent(), true);
-        if ( (false == $decoded) ||
+        if (
+            (false == $decoded) ||
             !isset($decoded['summary'])
         ) {
             throw Caller::byReport();
         }
-        
+
         $report = oxNew(Report::class);
         $report->setReport($decoded['summary']);
         $report->setIssuedAt(new DateTime('now'));
@@ -43,7 +44,8 @@ class CallerService implements CallerServiceInterface
 
     private function validateReport(Page $page): void
     {
-        if (!is_array($page->getInfo()) ||
+        if (
+            !is_array($page->getInfo()) ||
             !isset($page->getInfo()['http_code']) ||
             200 !== (int) $page->getInfo()['http_code']
         ) {

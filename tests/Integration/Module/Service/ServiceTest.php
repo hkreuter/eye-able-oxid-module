@@ -15,13 +15,13 @@ use OxidEsales\EshopCommunity\Tests\Integration\IntegrationTestCase;
 
 final class ServiceTest extends IntegrationTestCase
 {
-     public function testSomething(): void
-     {
-         $service = ContainerFactory::getInstance()
-             ->getContainer()
-             ->get(Settings::class);
+    public function testSomething(): void
+    {
+        $service = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(Settings::class);
 
-         $this->assertNotEmpty($service->getApiKey());
-         $this->assertNotEmpty($service->getApiUrl());
-     }
+        $this->assertNotEmpty($service->getApiKey());
+        $this->assertNotEmpty($service->getApiUrl());
+    }
 }

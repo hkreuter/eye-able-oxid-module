@@ -31,7 +31,7 @@ class ReportController extends WidgetController
                 ->get(ReportTrigger::class)
                 ->triggerReport();
         }
-    
+
         exit();
     }
 }
