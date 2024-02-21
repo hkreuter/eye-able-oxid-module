@@ -38,5 +38,15 @@ $aModule = [
     'events' => [
         'onActivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onActivate',
         'onDeactivate' => '\EyeAble\EyeAbleAssist\Core\ModuleEvents::onDeactivate'
+    ],
+    'settings' => [
+        /** Main */
+        [
+            'group'       => 'eyeableassist_main',
+            'name'        => 'eyeableassist_frequence',
+            'type'        => 'select',
+            'constraints'  => '1d|7d|14d',
+            'value'       => '7d'
+        ],
     ]
 ];

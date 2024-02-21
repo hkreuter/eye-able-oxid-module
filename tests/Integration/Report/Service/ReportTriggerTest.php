@@ -11,6 +11,7 @@ namespace EyeAble\EyeAbleAssist\Tests\Integration\Report\Service;
 
 use DateTime;
 use EyeAble\EyeAbleAssist\Caller\Service\CallerService;
+use EyeAble\EyeAbleAssist\Module\Service\Settings;
 use EyeAble\EyeAbleAssist\Report\Infrastructure\ReportProvider;
 use EyeAble\EyeAbleAssist\Report\Model\Report;
 use EyeAble\EyeAbleAssist\Report\Model\ReportDataInterface;
@@ -51,9 +52,14 @@ final class ReportTriggerTest extends IntegrationTestCase
         $callerService = $this->createPartialMock(CallerService::class, ['createReport']);
         $callerService->expects($this->never())->method('createReport');
 
+        $settings = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(Settings::class);
+
         $service = new ReportTrigger(
             $reportProvider,
-            $callerService
+            $callerService,
+            $settings
         );
 
         $service->triggerReport();
@@ -78,9 +84,14 @@ final class ReportTriggerTest extends IntegrationTestCase
         $callerService = $this->createPartialMock(CallerService::class, ['createReport']);
         $callerService->expects($this->once())->method('createReport');
 
+        $settings = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(Settings::class);
+
         $service = new ReportTrigger(
             $reportProvider,
-            $callerService
+            $callerService,
+            $settings
         );
 
         $service->triggerReport();
@@ -105,9 +116,14 @@ final class ReportTriggerTest extends IntegrationTestCase
         $callerService = $this->createPartialMock(CallerService::class, ['createReport']);
         $callerService->expects($this->once())->method('createReport');
 
+        $settings = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(Settings::class);
+
         $service = new ReportTrigger(
             $reportProvider,
-            $callerService
+            $callerService,
+            $settings
         );
 
         $service->triggerReport();

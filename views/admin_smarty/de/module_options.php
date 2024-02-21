@@ -14,5 +14,10 @@ $aLang = [
     'EYEABLE_LATEST_REPORT_PAGE' => 'Geprüfte Seite: ',
     'EYEABLE_LATEST_REPORT_ERRORCOUNT' => 'Anzahl Fehler: ',
     'EYEABLE_LATEST_REPORT_DATE' => 'Letzte Prüfung am: ',
-    'EYEABLE_PLEASE_WAIT_FOR_REPORT' => 'Bitte warten, Ihre Eye-Able Prüfung wird durchgeführt.'
+    'EYEABLE_PLEASE_WAIT_FOR_REPORT' => 'Bitte warten, Ihre Eye-Able Prüfung wird durchgeführt.',
+    'SHOP_MODULE_GROUP_eyeableassist_main' => 'Einstellungen',
+    'SHOP_MODULE_eyeableassist_frequence' => 'Eye-Able Report Frequenz',
+    'SHOP_MODULE_eyeableassist_frequence_1d' => '1 Tag',
+    'SHOP_MODULE_eyeableassist_frequence_7d' => '7 Tage',
+    'SHOP_MODULE_eyeableassist_frequence_14d' => '14 Tage',
 ];

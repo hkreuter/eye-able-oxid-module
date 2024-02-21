@@ -13,14 +13,15 @@ use EyeAble\EyeAbleAssist\Caller\Exception\Caller as CallerException;
 use EyeAble\EyeAbleAssist\Caller\Service\CallerServiceInterface;
 use EyeAble\EyeAbleAssist\Report\Infrastructure\ReportProviderInterface;
 use OxidEsales\EshopCommunity\Core\Registry;
+use EyeAble\EyeAbleAssist\Module\Service\Settings as ModuleSettings;
 
 class ReportTrigger
 {
-    private const REPORT_TIMEOUT_AFTER = 604800; //7 days
 
     public function __construct(
         private ReportProviderInterface $reportProvider,
-        private CallerServiceInterface $caller
+        private CallerServiceInterface $caller,
+        private ModuleSettings $settings
     ) {
     }
 
@@ -31,7 +32,7 @@ class ReportTrigger
         if (
             !$reportModel->isLoaded() ||
             !$reportModel->getIssuedAt() ||
-            ($reportModel->getIssuedAt()->getTimestamp() + self::REPORT_TIMEOUT_AFTER < microtime(true))
+            ($reportModel->getIssuedAt()->getTimestamp() + $this->settings->getFrequency() < microtime(true))
         ) {
             try {
                 $this->caller->createReport();
