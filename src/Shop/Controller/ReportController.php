@@ -32,6 +32,9 @@ class ReportController extends WidgetController
                 ->triggerReport();
         }
 
+        if (!headers_sent()) {
+            header_remove();
+        }
         exit();
     }
 }

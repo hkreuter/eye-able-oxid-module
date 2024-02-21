@@ -24,7 +24,9 @@ final class ViewConfigTest extends IntegrationTestCase
 
         $reportData = $viewConfig->getLatestEyeableReportData();
 
-        $this->assertNull($reportData);
+        $this->assertInstanceOf(ReportDataInterface::class, $reportData);
+        $this->assertEquals(-1, $reportData->getErrorCount());
+        $this->assertEquals('', $reportData->getTestedPage());
     }
 
     public function testGetLatestEyeableReportData(): void

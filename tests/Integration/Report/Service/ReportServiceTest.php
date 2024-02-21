@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace EyeAble\EyeAbleAssist\Tests\Integration\Report\Service;
 
+use EyeAble\EyeAbleAssist\Report\Model\ReportData;
 use EyeAble\EyeAbleAssist\Report\Model\ReportDataInterface;
 use EyeAble\EyeAbleAssist\Report\Service\ReportServiceInterface;
 use EyeAble\EyeAbleAssist\Tests\Integration\TestHelperTrait;
@@ -40,6 +41,10 @@ final class ReportServiceTest extends IntegrationTestCase
             ->getContainer()
             ->get(ReportServiceInterface::class);
 
-        $this->assertNull($provider->getLatestReportData());
+        /** @var ReportDataInterface $report */
+        $report = $provider->getLatestReportData();
+
+        $this->assertSame(-1, $report->getErrorCount());
+        $this->assertEmpty($report->getTestedPage());
     }
 }

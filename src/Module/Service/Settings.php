@@ -14,7 +14,7 @@ use Symfony\Component\String\UnicodeString;
 
 final class Settings
 {
-    private const MODULE_ID= 'eyeable_assist';
+    private const MODULE_ID = 'eyeable_assist';
 
     private const REPORT_FREQUENCY = 'eyeableassist_frequence';
 
@@ -24,7 +24,7 @@ final class Settings
 
     private array $constraintsMap = [
         '1d' => 86400,
-        '7d' =>  604800,
+        '7d' => 604800,
         '14d' => 1209600
     ];
 
@@ -51,5 +51,10 @@ final class Settings
             ->getString(self::REPORT_FREQUENCY, self::MODULE_ID);
 
         return isset($this->constraintsMap[$value]) ? $this->constraintsMap[$value] : $this->constraintsMap['7d'];
+    }
+
+    public function getRefreshOnlyAfter(): int
+    {
+        return 300;
     }
 }

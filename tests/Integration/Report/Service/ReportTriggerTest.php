@@ -37,10 +37,51 @@ final class ReportTriggerTest extends IntegrationTestCase
     {
         $report = $this->createPartialMock(
             Report::class,
-            ['isLoaded', 'getIssuedAt']
+            ['isLoaded', 'getReport']
         );
         $report->method('isLoaded')->willReturn(true);
-        $report->method('getIssuedAt')->willReturn(new DateTime('now'));
+        $report->method('getReport')
+            ->willReturn(
+                [
+                    'crawlInfo' =>
+                        [
+                            'start' => 'some_url'
+                        ],
+                    'totalWarnings' => 13
+                ]
+            );
+
+        $reportProvider = $this->createPartialMock(
+            ReportProvider::class,
+            ['getLatestReport']
+        );
+        $reportProvider->method('getLatestReport')
+            ->willReturn($report);
+
+        $callerService = $this->createPartialMock(CallerService::class, ['createReport']);
+        $callerService->expects($this->never())->method('createReport');
+
+        $settings = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(Settings::class);
+
+        $service = new ReportTrigger(
+            $reportProvider,
+            $callerService,
+            $settings
+        );
+
+        $service->triggerReport();
+    }
+
+    public function testTriggerReportNeedsARefresh(): void
+    {
+        $report = $this->createPartialMock(
+            Report::class,
+            ['isLoaded', 'getReport']
+        );
+        $report->method('isLoaded')->willReturn(true);
+        $report->method('getReport')->willReturn([]);
 
         $reportProvider = $this->createPartialMock(
             ReportProvider::class,
@@ -69,10 +110,9 @@ final class ReportTriggerTest extends IntegrationTestCase
     {
         $report = $this->createPartialMock(
             Report::class,
-            ['isLoaded', 'getIssuedAt']
+            ['isLoaded']
         );
         $report->method('isLoaded')->willReturn(false);
-        $report->method('getIssuedAt')->willReturn(null);
 
         $reportProvider = $this->createPartialMock(
             ReportProvider::class,

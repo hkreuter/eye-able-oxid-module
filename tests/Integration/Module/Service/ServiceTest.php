@@ -26,6 +26,7 @@ final class ServiceTest extends IntegrationTestCase
         $this->assertNotEmpty($service->getApiKey());
         $this->assertNotEmpty($service->getApiUrl());
         $this->assertNotEmpty($service->getFrequency());
+        $this->assertNotEmpty($service->getRefreshOnlyAfter());
     }
 
     public function testFrequencyDefaultFallback(): void

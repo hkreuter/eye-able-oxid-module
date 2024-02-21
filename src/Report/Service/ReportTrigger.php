@@ -17,7 +17,6 @@ use EyeAble\EyeAbleAssist\Module\Service\Settings as ModuleSettings;
 
 class ReportTrigger
 {
-
     public function __construct(
         private ReportProviderInterface $reportProvider,
         private CallerServiceInterface $caller,
@@ -28,17 +27,23 @@ class ReportTrigger
     public function triggerReport(): void
     {
         $reportModel = $this->reportProvider->getLatestReport();
+        $issuedAt = $reportModel->getIssuedAt()->getTimestamp();
+
+        Registry::getLogger()->debug('trigger start');
+        $start = microtime(true);
 
         if (
             !$reportModel->isLoaded() ||
-            !$reportModel->getIssuedAt() ||
-            ($reportModel->getIssuedAt()->getTimestamp() + $this->settings->getFrequency() < microtime(true))
+            (!isset($reportModel->getReport()['crawlInfo']) &&
+                $issuedAt + $this->settings->getRefreshOnlyAfter() < microtime(true)) ||
+            ($issuedAt + $this->settings->getFrequency() < microtime(true))
         ) {
             try {
                 $this->caller->createReport();
             } catch (CallerException $exception) {
                 Registry::getLogger()->debug($exception->getMessage());
             }
+            Registry::getLogger()->debug('trigger stop ' . (microtime(true) - $start));
         }
     }
 }

@@ -42,11 +42,6 @@ class Caller implements CallerInterface
         $errorMessage = curl_error($curlHandle);
         curl_close($curlHandle);
 
-        //not sure how this will tick, but it might be that creating report takes some time,
-        //so maybe data can only be fetched on a later call.
-        //TBD: as soon as we have a report in db, only call eye-able api again after a specified time.
-        // is 7 days ok?
-
         return new Page(
             $content,
             $errorMessage,

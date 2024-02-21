@@ -23,6 +23,11 @@ class CallerService implements CallerServiceInterface
 
     public function createReport(): ?string
     {
+        $report = oxNew(Report::class);
+        $report->setReport([]);
+        $report->setIssuedAt(new DateTime('now'));
+        $report->save();
+
         $page = $this->caller->fetchReport();
         $this->validateReport($page);
 
@@ -34,9 +39,7 @@ class CallerService implements CallerServiceInterface
             throw Caller::byReport();
         }
 
-        $report = oxNew(Report::class);
         $report->setReport($decoded['summary']);
-        $report->setIssuedAt(new DateTime('now'));
         $report->save();
 
         return $report->getId();
