@@ -37,8 +37,7 @@ class Caller implements CallerInterface
             $shopUrl .= '?shp=' . $shopId;
         }
 
-        //$curlHandle = $this->initializeCurl($this->getUrl($shopUrl));
-        $curlHandle = $this->initializeCurl("http://audit-api.eye-able.com/auditStats?apiKey=VZNJG65cb2fce4q5&url=" .urlencode($shopUrl));
+        $curlHandle = $this->initializeCurl($this->getUrl($shopUrl));
         $content = (string) curl_exec($curlHandle);
         $curlInfo = (array) curl_getinfo($curlHandle);
         $errorMessage = curl_error($curlHandle);

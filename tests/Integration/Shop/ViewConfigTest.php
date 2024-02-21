@@ -37,7 +37,7 @@ final class ViewConfigTest extends IntegrationTestCase
 
         $this->assertInstanceOf(ReportDataInterface::class, $reportData);
         $this->assertEquals(21, $reportData->getErrorCount());
-        $this->assertEquals('startpage', $reportData->getTestedPage());
+        $this->assertEquals('http://myoxidehop.local', $reportData->getTestedPage());
         $this->assertEquals('2024-02-01 12:12:12', $reportData->getReportDate());
     }
 }

@@ -14,8 +14,5 @@ $aLang = [
     'EYEABLE_LATEST_REPORT_PAGE' => 'Geprüfte Seite: ',
     'EYEABLE_LATEST_REPORT_ERRORCOUNT' => 'Anzahl Fehler: ',
     'EYEABLE_LATEST_REPORT_DATE' => 'Letzte Prüfung am: ',
-    'EYEABLE_PLEASE_WAIT_FOR_REPORT' => 'Bitte warten, Ihre Eye-Able Prüfung wird durchgeführt.',
-    //'SHOP_MODULE_GROUP_eyeableassist_main' => 'Einstellungen',
-    //'SHOP_MODULE_eyeableassist_apiurl' => 'Eye-Able API URL',
-    //'SHOP_MODULE_eyeableassist_apikey' => 'Eye-Able API Key',
+    'EYEABLE_PLEASE_WAIT_FOR_REPORT' => 'Bitte warten, Ihre Eye-Able Prüfung wird durchgeführt.'
 ];

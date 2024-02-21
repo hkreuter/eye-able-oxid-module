@@ -31,7 +31,7 @@ final class ReportServiceTest extends IntegrationTestCase
          $report = $provider->getLatestReportData();
 
          $this->assertSame(21, $report->getErrorCount());
-         $this->assertSame('startpage', $report->getTestedPage());
+         $this->assertSame('http://myoxidehop.local', $report->getTestedPage());
     }
 
     public function testGetLatestReportDataNoReport(): void
