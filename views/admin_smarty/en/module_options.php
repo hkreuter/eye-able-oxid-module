@@ -20,4 +20,6 @@ $aLang = [
     'SHOP_MODULE_eyeableassist_frequence_1d' => '1 day',
     'SHOP_MODULE_eyeableassist_frequence_7d' => '7 days',
     'SHOP_MODULE_eyeableassist_frequence_14d' => '14 days',
+    'SHOP_MODULE_eyeableassist_apiurl' => 'Eye-able report api url',
+    'SHOP_MODULE_eyeableassist_apikey' => 'Eye-able API key',
 ];

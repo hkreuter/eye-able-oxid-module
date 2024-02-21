@@ -18,6 +18,10 @@ final class Settings
 
     private const REPORT_FREQUENCY = 'eyeableassist_frequence';
 
+    private const API_KEY = 'eyeableassist_apikey';
+
+    private const REPORT_API_URL = 'eyeableassist_apiurl';
+
     private array $constraintsMap = [
         '1d' => 86400,
         '7d' =>  604800,
@@ -31,12 +35,14 @@ final class Settings
 
     public function getApiKey(): UnicodeString
     {
-        return new UnicodeString('VZNJG65cb2fce4q5');
+        return $this->moduleSettingService
+            ->getString(self::API_KEY, self::MODULE_ID);
     }
 
     public function getApiUrl(): UnicodeString
     {
-        return new UnicodeString("http://audit-api.eye-able.com/auditStats");
+        return $this->moduleSettingService
+            ->getString(self::REPORT_API_URL, self::MODULE_ID);
     }
 
     public function getFrequency(): int

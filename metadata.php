@@ -48,5 +48,17 @@ $aModule = [
             'constraints'  => '1d|7d|14d',
             'value'       => '7d'
         ],
+        [
+            'group'       => 'eyeableassist_main',
+            'name'        => 'eyeableassist_apiurl',
+            'type'        => 'str',
+            'value'       => 'https://audit-api.eye-able.com/auditStats'
+        ],
+        [
+            'group' => 'eyeableassist_main',
+            'name'  => 'eyeableassist_apikey',
+            'type'  => 'str',
+            'value' => 'VZNJG65cb2fce4q5'
+        ],
     ]
 ];
