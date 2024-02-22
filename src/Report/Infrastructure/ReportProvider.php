@@ -31,7 +31,7 @@ class ReportProvider implements ReportProviderInterface
         /** @var \Doctrine\DBAL\Statement $result */
         $result = $queryBuilder->execute();
         $resultId = (string) $result->fetchOne();
-        
+
         if ($resultId) {
             $report->load($resultId);
         }

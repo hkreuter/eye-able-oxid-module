@@ -2,18 +2,22 @@
 
 {% block admin_home_navigation_items %}
 
-    <p>{{ translate({ ident: "EYEABLE_REPORT_TITLE" }) }}</p>
-    <p>{{ translate({ ident: "EYEABLE_REPORT_EXPLANATION" }) }}</p>
+    {{ style({ include: oViewConf.getModuleUrl('eyeable_assist', 'css/eyeableassist.css') }) }}
+    <div>
 
-    {% set eyeablereport = oViewConf.getLatestEyeableReportData() %}
+        <p>{{ translate({ ident: "EYEABLE_REPORT_TITLE" }) }}</p>
+        <p>{{ translate({ ident: "EYEABLE_REPORT_EXPLANATION" }) }}</p>
 
-    {% if eyeablereport %}
-        <p>{{ translate({ ident: "EYEABLE_LATEST_REPORT_PAGE" }) }}{{ eyeablereport.getTestedPage() }}</p>
-        <p>{{ translate({ ident: "EYEABLE_LATEST_REPORT_ERRORCOUNT" }) }}{{ eyeablereport.getErrorCount() }}</p>
-        <p>{{ translate({ ident: "EYEABLE_LATEST_REPORT_DATE" }) }}{{ eyeablereport.getReportDate() }}</p>
-    {% else %}
-        <p>{{ translate({ ident: "EYEABLE_PLEASE_WAIT_FOR_REPORT" }) }}</p>
-    {% endif %}
+        {% set eyeablereport = oViewConf.getLatestEyeableReportData() %}
+
+        {% if eyeablereport and eyeablereport.getErrorCount() >= 0 %}
+            <p>{{ translate({ ident: "EYEABLE_LATEST_REPORT_PAGE" }) }}{{ eyeablereport.getTestedPage() }}</p>
+            <p>{{ translate({ ident: "EYEABLE_LATEST_REPORT_ERRORCOUNT" }) }}{{ eyeablereport.getErrorCount() }}</p>
+            <p>{{ translate({ ident: "EYEABLE_LATEST_REPORT_DATE" }) }}{{ eyeablereport.getReportDate() }}</p>
+        {% else %}
+            <p>{{ translate({ ident: "EYEABLE_PLEASE_WAIT_FOR_REPORT" }) }}</p>
+        {% endif %}
+    </div>
 
     <script>
         window.addEventListener(
@@ -22,12 +26,11 @@
                 let widgetUrl = '{{ oViewConf.getShopURL() }}' + '/admin/index.php?cl=eyeabletrigger&fnc=triggerEyeableReport';
 
                 const xhttp = new XMLHttpRequest();
+                xhttp.timeout = 1000;
                 xhttp.open('GET', widgetUrl, true);
-                xhttp.onload = () => {
-                    if (xhttp.readyState === xhttp.DONE && (xhttp.status === 0 || (xhttp.status >= 200 && xhttp.status < 400))) {
-                        console.log('triggered eye-able report');
-                    }
-                }
+                xhttp.ontimeout = (e) => {
+                    // XMLHttpRequest timed out. We did not want a response anway
+                };
                 xhttp.send();
             }
         );

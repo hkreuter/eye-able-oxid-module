@@ -22,19 +22,16 @@ final class ReportService implements ReportServiceInterface
     ) {
     }
 
-    public function getLatestReportData(): ?ReportDataInterface
+    public function getLatestReportData(): ReportDataInterface
     {
         $model = $this->reportProvider->getLatestReport();
-        $reportData = null;
-    
-        if ($model->isLoaded() && $model->getIssuedAt()) {
-            $raw = $model->getReport();
-            $reportData = new ReportData(
-                isset($raw['crawlInfo']["start"]) ? $raw['crawlInfo']["start"] : '',
-                isset($raw['totalWarnings']) ? (int) $raw['totalWarnings'] : -1,
-                $model->getIssuedAt()->format('Y-m-d h:i:s')
-            );
-        }
+
+        $raw = $model->getReport();
+        $reportData = new ReportData(
+            isset($raw['crawlInfo']['start']) ? $raw['crawlInfo']['start'] : '',
+            isset($raw['totalWarnings']) ? (int) $raw['totalWarnings'] : -1,
+            $model->getIssuedAt()->format('Y-m-d h:i:s')
+        );
 
         return $reportData;
     }

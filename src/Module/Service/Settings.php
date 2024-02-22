@@ -14,11 +14,19 @@ use Symfony\Component\String\UnicodeString;
 
 final class Settings
 {
-    public const MODULE_ID= 'eyeable_assist';
+    private const MODULE_ID = 'eyeable_assist';
 
-    public const API_KEY = 'eyeableassist_apikey';
+    private const REPORT_FREQUENCY = 'eyeableassist_frequence';
 
-    public const REPORT_API_URL = 'eyeableassist_apiurl';
+    private const API_KEY = 'eyeableassist_apikey';
+
+    private const REPORT_API_URL = 'eyeableassist_apiurl';
+
+    private array $constraintsMap = [
+        '1d' => 86400,
+        '7d' => 604800,
+        '14d' => 1209600
+    ];
 
     public function __construct(
         private ModuleSettingServiceInterface $moduleSettingService
@@ -35,5 +43,18 @@ final class Settings
     {
         return $this->moduleSettingService
             ->getString(self::REPORT_API_URL, self::MODULE_ID);
+    }
+
+    public function getFrequency(): int
+    {
+        $value = (string) $this->moduleSettingService
+            ->getString(self::REPORT_FREQUENCY, self::MODULE_ID);
+
+        return isset($this->constraintsMap[$value]) ? $this->constraintsMap[$value] : $this->constraintsMap['7d'];
+    }
+
+    public function getRefreshOnlyAfter(): int
+    {
+        return 300;
     }
 }

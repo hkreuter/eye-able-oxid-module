@@ -25,18 +25,16 @@ class ReportController extends WidgetController
     {
         if ($this->isAdmin()) {
             Registry::getLogger()->debug('Trigger eye-able report');
-            /*
+
             ContainerFactory::getInstance()
                 ->getContainer()
-                ->get(ReportTrigger::class);*/
-            
-            $reportTrigger = ContainerFactory::getInstance()
-                ->getContainer()
-                ->get(ReportTrigger::class);
-            $result =  $reportTrigger->triggerReport();
-            
+                ->get(ReportTrigger::class)
+                ->triggerReport();
         }
-    
+
+        if (!headers_sent()) {
+            header_remove();
+        }
         exit();
     }
 }
