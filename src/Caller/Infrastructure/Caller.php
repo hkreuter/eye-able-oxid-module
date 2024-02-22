@@ -54,7 +54,6 @@ class Caller implements CallerInterface
     ): string {
         $apiUrl = $this->moduleSettings->getApiUrl();
         $apiKey = $this->moduleSettings->getApiKey();
-
         return $apiUrl . '?apiKey=' . $apiKey . '&url=' . urlencode($shopUrl);
     }
 
