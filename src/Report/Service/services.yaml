@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    public: false
+
+  EyeAble\EyeAbleAssist\Report\Service\ReportServiceInterface:
+    class: EyeAble\EyeAbleAssist\Report\Service\ReportService
+    public: true
+
+  EyeAble\EyeAbleAssist\Report\Service\ReportTrigger:
+    public: true
