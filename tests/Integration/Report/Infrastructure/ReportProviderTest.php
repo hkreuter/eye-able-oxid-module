@@ -26,7 +26,7 @@ final class ReportProviderTest extends IntegrationTestCase
         $this->prepareTestData();
     }
 
-    public function testGetLatestReport(): void
+    public function testGetLatestValidReport(): void
     {
         $provider = new ReportProvider(
             ContainerFactory::getInstance()
@@ -34,8 +34,21 @@ final class ReportProviderTest extends IntegrationTestCase
             ->get(QueryBuilderFactoryInterface::class)
         );
 
-         $report = $provider->getLatestReport();
+         $report = $provider->getLatestValidReport();
 
          $this->assertSame($this->second, $report->getId());
+    }
+
+    public function testGetLatestReporty(): void
+    {
+        $provider = new ReportProvider(
+            ContainerFactory::getInstance()
+                ->getContainer()
+                ->get(QueryBuilderFactoryInterface::class)
+        );
+
+        $report = $provider->getLatestReport();
+
+        $this->assertSame($this->third, $report->getId());
     }
 }
