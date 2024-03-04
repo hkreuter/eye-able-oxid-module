@@ -15,7 +15,7 @@ use CurlHandle;
 
 class Caller implements CallerInterface
 {
-    private const CURL_TIMEOUT = '240';
+    private const CURL_TIMEOUT = '30';
 
     public function __construct(
         private ContextInterface $context,
@@ -54,6 +54,7 @@ class Caller implements CallerInterface
     ): string {
         $apiUrl = $this->moduleSettings->getApiUrl();
         $apiKey = $this->moduleSettings->getApiKey();
+
         return $apiUrl . '?apiKey=' . $apiKey . '&url=' . urlencode($shopUrl);
     }
 

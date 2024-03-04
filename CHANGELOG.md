@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## v2.0.0 - unreleased
 
+### Added
+- Report logic to show teaser report in shop admin backend.
+
 ### Changed
-- Updated module to work with OXID eShop 7
+- Updated module to work with OXID eShop 7.0
 
 ## v1.0.0 - unreleased
 
