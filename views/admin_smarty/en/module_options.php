@@ -16,10 +16,6 @@ $aLang = [
     'EYEABLE_LATEST_REPORT_DATE' => 'Last examination on: ',
     'EYEABLE_PLEASE_WAIT_FOR_REPORT' => 'Please wait some minutes while Eye-Able® Report is being created.',
     'SHOP_MODULE_GROUP_eyeableassist_main' => 'Settings',
-    'SHOP_MODULE_eyeableassist_frequence' => 'Eye-Able® Report frequence',
-    'SHOP_MODULE_eyeableassist_frequence_1d' => '1 day',
-    'SHOP_MODULE_eyeableassist_frequence_7d' => '7 days',
-    'SHOP_MODULE_eyeableassist_frequence_14d' => '14 days',
     'SHOP_MODULE_eyeableassist_apiurl' => 'Eye-Able® report API url',
     'SHOP_MODULE_eyeableassist_apikey' => 'Eye-Able® API key',
 ];
