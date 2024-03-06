@@ -25,18 +25,7 @@ final class ServiceTest extends IntegrationTestCase
 
         $this->assertNotEmpty($service->getApiKey());
         $this->assertNotEmpty($service->getApiUrl());
-        $this->assertNotEmpty($service->getFrequency());
         $this->assertNotEmpty($service->getRefreshOnlyAfter());
     }
 
-    public function testFrequencyDefaultFallback(): void
-    {
-        $stub = $this->createPartialMock(ModuleSettingService::class, ['getString']);
-        $stub->method('getString')
-            ->willReturn(new UnicodeString('invalid'));
-
-        $service = new Settings($stub);
-
-        $this->assertSame(604800, $service->getFrequency());
-    }
 }

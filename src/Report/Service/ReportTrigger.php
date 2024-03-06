@@ -18,6 +18,7 @@ use EyeAble\EyeAbleAssist\Module\Service\Settings as ModuleSettings;
 
 class ReportTrigger
 {
+    private const REPORT_TIMEOUT_AFTER = 604800; //7 days
     public function __construct(
         private ReportProviderInterface $reportProvider,
         private CallerServiceInterface $caller,
@@ -50,7 +51,7 @@ class ReportTrigger
 
     private function needNewReport(Report $report): bool
     {
-        return ($report->getIssuedAt()->getTimestamp() + $this->settings->getFrequency() < microtime(true));
+        return ($report->getIssuedAt()->getTimestamp() + self::REPORT_TIMEOUT_AFTER < microtime(true));
     }
 
     private function needValidReport(Report $report): bool

@@ -16,7 +16,6 @@ final class Settings
 {
     private const MODULE_ID = 'eyeable_assist';
 
-    private const REPORT_FREQUENCY = 'eyeableassist_frequence';
 
     private const API_KEY = 'eyeableassist_apikey';
 
@@ -43,14 +42,6 @@ final class Settings
     {
         return $this->moduleSettingService
             ->getString(self::REPORT_API_URL, self::MODULE_ID);
-    }
-
-    public function getFrequency(): int
-    {
-        $value = (string) $this->moduleSettingService
-            ->getString(self::REPORT_FREQUENCY, self::MODULE_ID);
-
-        return isset($this->constraintsMap[$value]) ? $this->constraintsMap[$value] : $this->constraintsMap['7d'];
     }
 
     public function getRefreshOnlyAfter(): int

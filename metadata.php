@@ -36,13 +36,6 @@ $aModule = [
         /** Main */
         [
             'group'       => 'eyeableassist_main',
-            'name'        => 'eyeableassist_frequence',
-            'type'        => 'select',
-            'constraints'  => '1d|7d|14d',
-            'value'       => '7d'
-        ],
-        [
-            'group'       => 'eyeableassist_main',
             'name'        => 'eyeableassist_apiurl',
             'type'        => 'str',
             'value'       => 'https://audit-api.eye-able.com/auditStats'
