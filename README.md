@@ -1,21 +1,29 @@
-# Eye-Able Assist Module
+## Eye-Able® Assist <br>
+This is the Oxid Module for <a href="https://eye-able.com/assist/" target="_blank">Eye-Able® Assist</a>. Our assistance software gives your users an accessible and personalised view of your website content. Eye-Able® Assist helps to customise the website to the individual needs of visitors. In this way, the assistance software promotes digital participation and improves the user experience. 
+Eye-Able® Assist contais over 25 functions for your accessibility and can be DSGVO-compliant integrated into all HTML-based interfaces.<br><br>
+You will also get a preview of our <a href="https://eye-able.com/report/" target="_blank">Eye-Able Report software</a>. By activating the module, you will receive a short test report every 7 days that shows you the number of accessibility deficiencies on your homepage. If you would like a detailed report for all your subpages, please contact us under [info@eye-able.com](mailto:info@eye-able.comt)
+<br><br>
 
-**Important** <br>
-The module only works when a config file is provided. For getting a Config File you have to contact -> info@eye-able.com . If you do not have one, the Eye-Able Assist Module will not work.
+**Important** <br> 
+In a Demo-mode Eye-Able® Assist can be used with a limited amount of functionalities. To get the full Eye-Able® Assist Software functionalities you need to purchase a license from us. The full license lets you customize Eye-Able® Assist so that it will fit to your corporate design. For more Information check out our <a href="https://eye-able.com/assist/" target="_blank">Website</a> or contact us under [info@eye-able.com](mailto:info@eye-able.comt)
+ website and contact us!
 
-## Branch compatibility
+
+### Installation Process
+
+### Branch compatibility
 
 * b-6.5.x branch is compatible with OXID eShop compilation b-6.5.x
 * b-7.0.x branch is compatible with OXID eShop compilation b-7.0.x
 * b-7.1.x branch is compatible with OXID eShop compilation b-7.1.x
 
-## Install via composer: 
+### Install via composer: 
 ```
 cd <shopRoot>
 composer require eyeable/eye-able-oxid
 ```
 
-## Install for development purposes
+### Install for development purposes
 1. Clone the repository into a suitable directory of your oxid shop, e.g. dev-packages.
 ```
 cd <shop installation path>
