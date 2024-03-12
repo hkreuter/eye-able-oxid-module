@@ -10,22 +10,22 @@ In a Demo-mode Eye-Able® Assist can be used with a limited amount of functional
 <h3>Installation Process</h3>
 
 Install via composer: 
- ```
-   cd <shopRoot>
-   composer require eyeable/eye-able-oxid
+```
+ cd <shopRoot>
+ composer require eyeable/eye-able-oxid
 ```
 
 Install manual: 
 1. Clone Repo into the modules directory of your oxid shop. The keep the provided folder structure:
- ```
-   cd <shopRoot>
-  git clone https://github.com/Tobias-Eye-Able/eye-able-oxid-module.git source/dev-packages/EyeAble/EyeAbleAssist --branch=b-6.5.x
+```
+ cd <shopRoot>
+ git clone https://github.com/Tobias-Eye-Able/eye-able-oxid-module.git source/dev-packages/EyeAble/EyeAbleAssist --branch=b-6.5.x
 ```
 2. Install Module from local path:
-     ```
-   cd <shopRoot>
-     composer config repositories.eyeable/eye-able-oxid path source/dev-packages/EyeAble/EyeAbleAssist
-     composer require eyeable/eye-able-oxid:*
-     ```
+```
+ cd <shopRoot>
+ composer config repositories.eyeable/eye-able-oxid path source/dev-packages/EyeAble/EyeAbleAssist
+ composer require eyeable/eye-able-oxid:*
+```
 
    
