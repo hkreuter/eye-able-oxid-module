@@ -1,3 +1,14 @@
+<h2>Eye-Able® Assist</h2> <br>
+This is the Oxid Module for Eye-Able® Assist. Our assistance software gives your users an accessible and personalised view of your website content. Eye-Able® Assist helps to customise the website to the individual needs of visitors. In this way, the assistance software promotes digital participation and improves the user experience. 
+Eye-Able® Assist contais over 25 functions for your accessibility and can be DSGVO-compliant integrated into all HTML-based interfaces.<br><br>
+
+**Important** <br> 
+In a Demo-mode Eye-Able® Assist can be used with a limited amount of functionalities. To get the full Eye-Able® Assist Software functionalities you need to purchase a license from us. The full license lets you customize Eye-Able® Assist so that it will fit to your corporate design. For more Information check out our <a href="https://eye-able.com/assist/" target="_blank">Website</a> or contact us under [info@eye-able.com](mailto:info@eye-able.comt)
+ website and contact us!
+
+
+<h3>Installation Process</h3>
+
 Install via composer: 
  ```
    cd <shopRoot>
@@ -16,6 +27,5 @@ Install manual:
      composer config repositories.eyeable/eye-able-oxid path source/dev-packages/EyeAble/EyeAbleAssist
      composer require eyeable/eye-able-oxid:*
      ```
-**Important** <br> 
-The module only works when a config file is provided. For getting a Config File you have to contact -> info@eye-able.com . If you do not have one, the Eye-Able Assist Module will not work.
+
    
