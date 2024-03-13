@@ -4,12 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## v3.0.0 - unreleased
+## v3.0.0 - 2024/13/03
 
 ### Changed
 - Updated module to work with OXID eShop 7.1
 
-## v2.0.0 - unreleased
+## v2.0.0 - 2024/13/03
 
 ### Added
 - Report logic to show teaser report in shop admin backend.
@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Updated module to work with OXID eShop 7.0
 
-## v1.0.0 - unreleased
+## v1.0.0 - 2024/13/03
 
 ### Added
 - First version 
