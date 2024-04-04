@@ -1,12 +1,15 @@
 ## Eye-Able® Assist <br>
 This is the Oxid Module for <a href="https://eye-able.com/assist/" target="_blank">Eye-Able® Assist</a>. Our assistance software gives your users an accessible and personalised view of your website content. Eye-Able® Assist helps to customise the website to the individual needs of visitors. In this way, the assistance software promotes digital participation and improves the user experience. 
 Eye-Able® Assist contais over 25 functions for your accessibility and can be DSGVO-compliant integrated into all HTML-based interfaces.<br><br>
-You will also get a preview of our <a href="https://eye-able.com/report/" target="_blank">Eye-Able Report software</a>. By activating the module, you will receive a short test report every 7 days that shows you the number of accessibility deficiencies on your homepage. If you would like a detailed report for all your subpages, please contact us under [info@eye-able.com](mailto:info@eye-able.comt)
-<br><br>
 
 **Important** <br> 
-In a Demo-mode Eye-Able® Assist can be used with a limited amount of functionalities. To get the full Eye-Able® Assist Software functionalities you need to purchase a license from us. The full license lets you customize Eye-Able® Assist so that it will fit to your corporate design. For more Information check out our <a href="https://eye-able.com/assist/" target="_blank">Website</a> or contact us under [info@eye-able.com](mailto:info@eye-able.comt)
- website and contact us!
+In a Demo-mode Eye-Able® Assist can be used with a limited amount of functionalities. To get the full Eye-Able® Assist Software functionalities you need to purchase a license from us. The full license lets you customize Eye-Able® Assist so that it will fit to your corporate design. Also we highly recommend to contact us for individual customization of the Eye-Able® Assist Software so that it works well on your website. For more Information check out our <a href="https://eye-able.com/assist/" target="_blank">Website</a> or contact us under [info@eye-able.com](mailto:info@eye-able.comt)
+ website and contact us!<br><br>
+
+## Eye-Able® Report <br>
+
+You will also get a preview of our <a href="https://eye-able.com/report/" target="_blank">Eye-Able Report software</a>. By activating the module, you will receive a short test report every 7 days that shows you the number of accessibility deficiencies after WCAG 2.2 on your homepage. If you would like a detailed report for all your subpages, please contact us under [info@eye-able.com](mailto:info@eye-able.comt)
+<br><br>
 
 ### Configuration
 
