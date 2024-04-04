@@ -16,6 +16,6 @@ $aLang = [
     'EYEABLE_LATEST_REPORT_DATE' => 'Letzte Prüfung am: ',
     'EYEABLE_PLEASE_WAIT_FOR_REPORT' => 'Bitte warten, Ihre Eye-Able® Prüfung wird durchgeführt.',
     'SHOP_MODULE_GROUP_eyeableassist_main' => 'Einstellungen',
-    'SHOP_MODULE_eyeableassist_apiurl' => 'Eye-Able® report API url',
-    'SHOP_MODULE_eyeableassist_apikey' => 'Eye-Able® API key',
+    'SHOP_MODULE_eyeableassist_apiurl' => 'URL der API der Eye-Able®-Auswertung',
+    'SHOP_MODULE_eyeableassist_apikey' => 'Eye-Able® API-Schlüssel',
 ];

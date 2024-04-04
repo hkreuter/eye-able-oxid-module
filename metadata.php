@@ -16,7 +16,10 @@ $sMetadataVersion = '2.1';
 $aModule = [
     'id'          => 'eyeable_assist',
     'title'       => 'Eye-Able® Assist',
-    'description' =>  'This is the Eye-Able® Assist Module. It helps to improve the accesibility of your shop or website. Eye-Able® Assist allows customers to customize the website to their individual needs.',
+    'description' => [
+        'en' => 'Discover the Eye-Able® Assist Module: Your solution for an accessible website or eShop. With Eye-Able® Assist, you give your customers the freedom to tailor your online offerings to their exact needs. Make access easier and open your digital door to a wider audience. Because every customer matters.',
+        'de' => 'Entdecken Sie das Eye-Able® Assist Modul: Ihre Lösung für eine barrierefreie Website oder eShop. Mit Eye-Able® Assist geben Sie Ihren Kunden die Freiheit, Ihr Online-Angebot genau auf ihre Bedürfnisse abzustimmen. Erleichtern Sie den Zugang und öffnen Sie Ihre digitale Tür für ein breiteres Publikum. Denn jeder Kunde zählt.'
+    ],
     'thumbnail'   => 'pictures/logo.png',
     'version'     => '3.0.0',
     'author'      => 'Webinclusion GmbH, OXID eSales AG',
