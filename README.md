@@ -8,7 +8,7 @@ In a Demo-mode Eye-Able® Assist can be used with a limited amount of functional
 
 ## Eye-Able® Report <br>
 
-You will also get a preview of our <a href="https://eye-able.com/report/" target="_blank">Eye-Able Report software</a>. By activating the module, you will receive a short test report every 7 days that shows you the number of accessibility deficiencies after WCAG 2.2 on your homepage. If you would like a detailed report for all your subpages, please contact us under [info@eye-able.com](mailto:info@eye-able.comt)
+You will also get a preview of our <a href="https://eye-able.com/report/" target="_blank">Eye-Able Report software</a>. By activating the module, you will receive a short test report every 7 days that shows you the number of accessibility deficiencies after WCAG 2.2 Level AA on your homepage. If you would like a detailed report for all your subpages, please contact us under [info@eye-able.com](mailto:info@eye-able.comt)
 <br><br>
 
 ### Configuration
