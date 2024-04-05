@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## v3.0.0 - 2024/05/04
+## v3.0.1 - 2024/05/04
 ### Added
 - More Explanation to Report
 - Report based on WCAG AA
@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - change route of eyeAble.js file
 - assist more stable in demo version
 
-## v2.0.0 - 2024/05/04
+## v2.0.1 - 2024/05/04
 ### Added
 - More Explanation to Report
 - Report based on WCAG AA
@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - change route of eyeAble.js file
 - assist more stable in demo version
 
-## v1.0.0 - 2024/05/04
+## v1.0.1 - 2024/05/04
 ### Changed
 - change route of eyeAble.js file
 - assist more stable in demo version
