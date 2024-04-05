@@ -21,7 +21,7 @@ $aModule = [
         'de' => 'Entdecken Sie das Eye-Able® Assist Modul: Ihre Lösung für eine barrierefreie Website oder eShop. Mit Eye-Able® Assist geben Sie Ihren Kunden die Freiheit, Ihr Online-Angebot genau auf ihre Bedürfnisse abzustimmen. Erleichtern Sie den Zugang und öffnen Sie Ihre digitale Tür für ein breiteres Publikum. Denn jeder Kunde zählt. Kontaktieren Sie uns für eine Vollizenz und die Anpassung der Software an Ihre Webseite. Außerdem erhalten Sie einen Kurzreport zu Barrierefreiheitsfehler nach WCAG 2.2 - diesen können Sie auf der Startseite im Admin Bereich einsehen.'
     ],
     'thumbnail'   => 'pictures/logo.png',
-    'version'     => '3.0.0',
+    'version'     => '3.0.1',
     'author'      => 'Webinclusion GmbH, OXID eSales AG',
     'url'         => 'https://eye-able.com/',
     'email'       => 'info@eye-able.com',
